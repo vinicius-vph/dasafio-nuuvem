@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Desafio Nuuvem</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <link rel="shortcut icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-a9902ad6d5d844eb0df7becfac9f2cdc.ico">
+    <link rel="shortcut icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-196-1385e2bbdffcaab407e2ba6ff41f8d6a.png" sizes="196x196">
+    <link rel="icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-16-66dd8fa332d694ed6d5c3bdedb3b6126.png" sizes="16x16">
+    <link rel="icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-32-6331860e5d14c3fa16fe10c2365da982.png" sizes="32x32">
+    <link rel="icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-57-e393708a0b7874d37e93a6a01dd25c8e.png" sizes="57x57">
+    <link rel="icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-76-ffd60de2c101f64acb47383689d5277e.png" sizes="76x76">
+    <link rel="icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-96-19c81739690bb7c182d0a3e268805992.png" sizes="96x96">
+    <link rel="icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-120-7f7b62d8883ccd50eea7531fc9e608a0.png" sizes="120x120">
+    <link rel="icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-128-faa39bed5f7b28dda6c99980abc41ae6.png" sizes="128x128">
+    <link rel="icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-144-f46d121fc1a6e20df9d4888cbf442188.png" sizes="144x144">
+    <link rel="icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-152-f1fb763c0a537568498a2100a4516998.png" sizes="152x152">
+    <link rel="icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-180-f1fb763c0a537568498a2100a4516998.png" sizes="180x180">
+    <link rel="icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-195-d4e3f994d041508cc201e53d8d26ed0f.png" sizes="195x195">
+    <link rel="icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-196-1385e2bbdffcaab407e2ba6ff41f8d6a.png" sizes="196x196">
+    <link rel="icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-228-a0d6fa22b26e9b77f12be4fdc2572a79.png" sizes="228x228">
+    <link rel="apple-touch-icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-57-e393708a0b7874d37e93a6a01dd25c8e.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-60-e49ce569e0fed6c0a51dd7e42b59e862.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-72-bb8a50418cf9c803fb4b2b47e892a91e.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-76-ffd60de2c101f64acb47383689d5277e.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-114-74fd8a3fb62b8c2af69714f4301d9db4.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-120-7f7b62d8883ccd50eea7531fc9e608a0.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-144-f46d121fc1a6e20df9d4888cbf442188.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="https://assets.nuuvem.com/assets/fe/images/favicon-152-f1fb763c0a537568498a2100a4516998.png" sizes="152x152">
+  </head>
+
+  <body>
+    <nav class="navbar nav-light" style="background: transparent linear-gradient(82deg,#007aff 0%,#151d27 100%) 0% 0% no-repeat;height:100px">
+      <h1 class="text-white text-center" style="margin:0 auto;" id="interativetext">
+        Analisador de Transações Financeiras 
+      </h1>
+    </nav>
+    <article style="width:90%;height:70vh;margin:0 auto;">
+      <% if notice %>
+        <div class="alert alert-success text-center" role="alert">
+          <%= notice %>
+        </div>
+      <% end %>
+      <% if alert %>
+        <div class="alert alert-danger text-center" role="alert">
+          <%= alert %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </article>
+    
+    <script>
+      const title = document.querySelector('#interativetext');
+      function typeWriter (elemento) {    
+        const textoArray = elemento.innerHTML.split('');      
+        elemento.innerHTML = ''      
+        textoArray.forEach((letra, i) => {      
+          setTimeout(() =>      
+          elemento.innerHTML += letra, 150 * i);
+        });
+      }  
+      setInterval(() => typeWriter(title), 10000);
+    </script>
+  </body>
+</html>
