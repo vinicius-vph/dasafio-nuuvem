@@ -10,17 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_13_150937) do
+ActiveRecord::Schema.define(version: 2021_07_15_194533) do
 
-  create_table "transactions", force: :cascade do |t|
-    t.string "purchaser_name"
-    t.string "item_description"
-    t.decimal "item_price"
-    t.integer "purchase_count"
-    t.string "merchant_address"
-    t.string "merchant_name"
+  create_table "items", force: :cascade do |t|
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "merchants", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "purchasers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.decimal "item_price"
+    t.integer "purchase_count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "purchaser_id", null: false
+    t.integer "merchant_id", null: false
+    t.integer "item_id", null: false
+    t.index ["item_id"], name: "index_transactions_on_item_id"
+    t.index ["merchant_id"], name: "index_transactions_on_merchant_id"
+    t.index ["purchaser_id"], name: "index_transactions_on_purchaser_id"
+  end
+
+  add_foreign_key "transactions", "items"
+  add_foreign_key "transactions", "merchants"
+  add_foreign_key "transactions", "purchasers"
 end
