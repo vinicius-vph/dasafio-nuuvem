@@ -1,15 +1,18 @@
-example_id                                                                  | status  | run_time        |
---------------------------------------------------------------------------- | ------- | --------------- |
-./spec/models/item_spec.rb[1:1]                                             | pending | 0.00002 seconds |
-./spec/models/merchant_spec.rb[1:1]                                         | pending | 0.00001 seconds |
-./spec/models/purchaser_spec.rb[1:1]                                        | pending | 0.00001 seconds |
-./spec/models/transaction_spec.rb[1:1]                                      | pending | 0.00001 seconds |
-./spec/system/user_upload_tab_file_spec.rb[1:1:1]                           | passed  | 4.99 seconds    |
-./spec/system/user_upload_tab_file_spec.rb[1:1:2]                           | passed  | 0.30395 seconds |
-./spec/system/user_view_last_uploaded_file_transactions_page_spec.rb[1:1:1] | passed  | 0.48244 seconds |
-./spec/system/user_view_total_all_time_transactions_page_spec.rb[1:1:1]     | passed  | 0.55258 seconds |
-./spec/system/user_visit_homepage_spec.rb[1:1:1]                            | passed  | 0.06991 seconds |
-./spec/system/user_visit_results_page_spec.rb[1:1:1]                        | passed  | 0.13234 seconds |
-./spec/system/user_visit_results_page_spec.rb[1:1:2]                        | passed  | 0.10358 seconds |
-./spec/system/user_visit_upload_page_spec.rb[1:1:1]                         | passed  | 0.0922 seconds  |
-./spec/system/user_visit_upload_page_spec.rb[1:1:2]                         | passed  | 0.09106 seconds |
+example_id                                                                  | status | run_time        |
+--------------------------------------------------------------------------- | ------ | --------------- |
+./spec/models/item_spec.rb[1:1:1]                                           | passed | 0.43949 seconds |
+./spec/models/merchant_spec.rb[1:1:1]                                       | passed | 0.04387 seconds |
+./spec/models/merchant_spec.rb[1:1:2]                                       | passed | 0.03317 seconds |
+./spec/models/purchaser_spec.rb[1:1:1]                                      | passed | 0.02694 seconds |
+./spec/models/purchaser_spec.rb[1:1:2]                                      | passed | 0.01925 seconds |
+./spec/models/transaction_spec.rb[1:1:1]                                    | passed | 0.06266 seconds |
+./spec/models/transaction_spec.rb[1:2:1]                                    | passed | 0.064 seconds   |
+./spec/system/user_upload_tab_file_spec.rb[1:1:1]                           | passed | 6.4 seconds     |
+./spec/system/user_upload_tab_file_spec.rb[1:1:2]                           | passed | 0.4585 seconds  |
+./spec/system/user_view_last_uploaded_file_transactions_page_spec.rb[1:1:1] | passed | 0.6382 seconds  |
+./spec/system/user_view_total_all_time_transactions_page_spec.rb[1:1:1]     | passed | 0.56975 seconds |
+./spec/system/user_visit_homepage_spec.rb[1:1:1]                            | passed | 0.04256 seconds |
+./spec/system/user_visit_results_page_spec.rb[1:1:1]                        | passed | 0.10705 seconds |
+./spec/system/user_visit_results_page_spec.rb[1:1:2]                        | passed | 0.06664 seconds |
+./spec/system/user_visit_upload_page_spec.rb[1:1:1]                         | passed | 0.07242 seconds |
+./spec/system/user_visit_upload_page_spec.rb[1:1:2]                         | passed | 0.08815 seconds |
