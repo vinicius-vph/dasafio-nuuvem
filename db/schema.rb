@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_15_194533) do
+ActiveRecord::Schema.define(version: 2021_08_17_205418) do
 
   create_table "items", force: :cascade do |t|
     t.string "description"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_07_15_194533) do
     t.integer "purchaser_id", null: false
     t.integer "merchant_id", null: false
     t.integer "item_id", null: false
+    t.datetime "processed_at"
     t.index ["item_id"], name: "index_transactions_on_item_id"
     t.index ["merchant_id"], name: "index_transactions_on_merchant_id"
     t.index ["purchaser_id"], name: "index_transactions_on_purchaser_id"
