@@ -1,13 +1,9 @@
-window.formSubmit = function(e) {
-  console.log('passou')
-  if (document.getElementById("tab_input").value == "") {
-    e.preventDefault();
-    alert("O campo está vazio selecione um arquivo .txt para continuar !");
+window.formSubmit = function(event) {
+  if (document.getElementById('transaction_tab_input').value == '') {
+    event.preventDefault();
+    alert('O campo está vazio, selecione um arquivo do tipo .txt e clique em enviar para continuar !');
   } else {
-    document.getElementById('loading_box').style.display = "flex"
+    document.getElementById('form_box').style.display = 'none';
+    document.getElementById('loading_box').style.display = 'flex';
   }
-}
-
-// function toogle() {
-//   document.getElementById('loading_box').style.display = "flex"
-// }
+};
