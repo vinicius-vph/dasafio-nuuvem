@@ -1,0 +1,11 @@
+<div id="form_box">
+  <%= form_with(model: transaction, url: transaction_url) do |f| %>
+    <div class="mb-3">
+      <%= f.label :tab_input, "Faça upload do arquivo para análise", class:"form-label" %>
+      <%= f.file_field :tab_input, class:"form-control", accept: ".tab", required: true %>
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto mt-4">
+      <%= f.submit button_text, data: {disable_with: 'Enviando...'},class:"btn btn-success", id:"submit", onclick: "formSubmit(event)" %>  
+    </div>
+  <% end %>
+</div>
