@@ -47,3 +47,4 @@ Gemfile.sample.rb
 schema.sample.rb
 index.sample.html.erb
 results.sample.html.erb
+failed-tests.txt
