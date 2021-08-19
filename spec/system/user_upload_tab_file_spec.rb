@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'User upload tab file' do
-  context 'Upload' do
+  context 'Success' do
     it 'Should be able upload tab file' do
       visit new_transaction_path
       attach_file 'transaction_tab_input', Rails.root.join('example_input.tab')
@@ -23,6 +23,20 @@ describe 'User upload tab file' do
       expect(page).to have_text('Nome da Loja')
       expect(page).to have_text('Receita Bruta do Último Upload')
       expect(page).to have_text('Receita Bruta Total')
+    end
+  end
+end
+
+describe 'User upload damaged file' do
+  context 'Fail' do
+    it 'Should not be able to upload tab file' do
+      visit new_transaction_path
+      attach_file 'transaction_tab_input', Rails.root.join('failed-tests.tab')
+      click_on 'Enviar'
+
+      expect(current_path).to_not eq(transaction_index_path)
+      expect(current_path).to eq(root_path)
+      expect(page).to have_text('Falha ao importar o arquivo !')
     end
   end
 end

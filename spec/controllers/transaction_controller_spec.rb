@@ -18,6 +18,10 @@ RSpec.describe TransactionController, type: :controller do
       get :index
       expect(response.body).to eq ''
     end
+    it 'Should be able render correct template' do
+      get :index
+      expect(response).to render_template(:index)
+    end
   end
 end
 
@@ -38,6 +42,10 @@ RSpec.describe TransactionController, type: :controller do
     it 'Should be able has a empty body' do
       get :new
       expect(response.body).to eq ''
+    end
+    it 'Should be able render correct template' do
+      get :new
+      expect(response).to render_template(:new)
     end
   end
 end
