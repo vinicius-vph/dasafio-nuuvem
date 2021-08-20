@@ -11,8 +11,10 @@ class TransactionController < ApplicationController
   end
 
   def create
+    @file_parsed = file_parser(uploaded_file)
+
     Transaction.transaction do
-      file_parsed.each do |transaction|
+      @file_parsed.each do |transaction|
         transaction[:processed_at] = @processed_at
         Transaction.create!(transaction)
       end
@@ -29,8 +31,8 @@ class TransactionController < ApplicationController
     params.require(:transaction).require(:tab_input)
   end
 
-  def file_parsed
-    TabParserService.new(uploaded_file).process
+  def file_parser(file)
+    TabParserService.new(file).process
   end
 
   def processed_at
