@@ -5,6 +5,7 @@ class TabParserService
 
   def process
     tab_parsed = []
+
     @file.each_line do |tab_content|
       header_line = 'purchaser name'
       next if tab_content.match?(header_line)

@@ -8,7 +8,7 @@ RSpec.describe Transaction, type: :model do
     it 'Should be able has one after adding one' do
       purchaser = Purchaser.create(name: 'Jonh Doe')
       merchant = Merchant.create(name: 'Ruby Store', address: 'rails street, 123')
-      item_ = Item.create!(description: 'Some description')
+      item_ = Item.create(description: 'Some description')
       Transaction.create(item_price: 70, purchase_count: 7, purchaser_id: purchaser.id, merchant_id: merchant.id,
                          item_id: item_.id, processed_at: Time.new)
 
@@ -43,11 +43,11 @@ end
 RSpec.describe Transaction, type: :model do
   context 'Transaction Methods Validation' do
     it 'Should be able to see that method total_cost return correct results' do
-      purchaser = Purchaser.create!(name: 'Jonh Doe')
-      merchant = Merchant.create!(name: 'Ruby Store', address: 'rails street, 123')
-      item_ = Item.create!(description: 'Some description')
-      Transaction.create!(item_price: 70, purchase_count: 7, purchaser_id: purchaser.id, merchant_id: merchant.id,
-                          item_id: item_.id, processed_at: Time.new)
+      purchaser = Purchaser.create(name: 'Jonh Doe')
+      merchant = Merchant.create(name: 'Ruby Store', address: 'rails street, 123')
+      item_ = Item.create(description: 'Some description')
+      Transaction.create(item_price: 70, purchase_count: 7, purchaser_id: purchaser.id, merchant_id: merchant.id,
+                         item_id: item_.id, processed_at: Time.new)
 
       transaction = Transaction.select(:merchant, :item_price, :purchase_count, :processed_at).group(:merchant)
 
