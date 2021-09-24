@@ -22,17 +22,14 @@ class TabParserService
   private
 
   def purchaser(tab_item)
-    registred_purchaser = Purchaser.find_by(name: tab_item)
-    registred_purchaser ? registred_purchaser.id : Purchaser.create!(name: tab_item).id
+    Purchaser.find_or_create_by(name: tab_item).id
   end
 
   def item(tab_item)
-    registred_item = Item.find_by(description: tab_item)
-    registred_item ? registred_item.id : Item.create!(description: tab_item).id
+    Item.find_or_create_by(description: tab_item).id
   end
 
   def merchant(name, address)
-    registred_merchant = Merchant.find_by(name: name)
-    registred_merchant ? registred_merchant.id : Merchant.create!(name: name, address: address).id
+    Merchant.find_or_create_by(name: name, address: address).id
   end
 end
